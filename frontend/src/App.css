@@ -1,11 +1,53 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-ul{
+  background-color: black;
+  padding: 5px;
 }
+
+.nav-ul li{
+  display: inline-block;
+  padding: 2vh;
+
+}
+
+.nav-ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+/* ----------------footer------------------- */
+.footer-div{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2vh;
+  text-align: center;
+
+
+
+  
+  background-color: black;
+  color: white;
+
+}
+
+.icon{
+  margin-right: 15px;
+}
+
+.footer-element{
+  margin-bottom: 10px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
