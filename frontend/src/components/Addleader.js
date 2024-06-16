@@ -12,18 +12,25 @@ const Addleader = () => {
     const [books, setBooks] = useState([]);
     const [awards, setAwards] = useState([]);
     const [error, setError] = useState(false);
+    const [error2, setError2] = useState('');
 
     const addBook = () => {
-        if (bookInput.trim() !== '') {
+        if (bookInput.trim() !== '' && books.length < 3) {
             setBooks([...books, bookInput]);
             setBookInput('');
+            setError2('');
+        } else if (books.length >= 3) {
+            setError2('You can only add up to 3 books.');
         }
     };
 
     const addAward = () => {
-        if (awardInput.trim() !== '') {
+        if (awardInput.trim() !== '' && awards.length < 3) {
             setAwards([...awards, awardInput]);
             setAwardInput('');
+            setError2('');
+        } else if (awards.length >= 3) {
+            setError2('You can only add up to 3 awards.');
         }
     };
 
@@ -71,6 +78,7 @@ const Addleader = () => {
     <div>
         <input className="inputBox" type="text" placeholder='enter book' value={bookInput} onChange={(e) => setBookInput(e.target.value)} />
         <button type="button" className='addbtn regbtn' onClick={addBook}>Add Book</button>
+        {error2 && books.length >= 3 && <span className='invalid-inp'>{error2}</span>}
     </div>
     <ul className='inputBox'>
         <li style={{ listStyle: 'none', fontWeight: 'bold' }}>Books:</li>
@@ -82,6 +90,7 @@ const Addleader = () => {
     <div>
         <input className="inputBox" type="text" placeholder='enter award' value={awardInput} onChange={(e) => setAwardInput(e.target.value)} />
         <button type="button" className='addbtn regbtn' onClick={addAward}>Add Award</button>
+        {error2 && books.length >= 3 && <span className='invalid-inp'>{error2}</span>}
     </div> 
     <ul className='inputBox'>
         <li style={{ listStyle: 'none', fontWeight: 'bold' }}>Awards:</li>

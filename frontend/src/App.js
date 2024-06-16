@@ -10,6 +10,7 @@ import SignUp from './components/SignUp';
 import PrivateComponent from './components/PrivateComponent';
 import Login from './components/Login';
 import Addleader from './components/Addleader';
+import LeaderList from './components/LeaderList';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Routes>
   
         <Route exact path="/" element={<PrivateComponent/>} >
-            <Route exact path="/" element={<h1>leader</h1>} />
+            <Route exact path="/" element={<LeaderList/>} />
             <Route exact path="/add" element={<Addleader/>} />
             <Route exact path="/update" element={<h1>update</h1>} />
             <Route exact path="/logout" element={<h1>logout</h1>} />

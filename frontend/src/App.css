@@ -10,8 +10,11 @@
 
 
 .nav-ul{
+  position: fixed;
+  width: 100%;
   background-color: black;
   padding: 5px;
+  z-index: 2;
 }
 
 .nav-ul li{
@@ -33,7 +36,7 @@
 /* ----------------logo------------------- */
 .logo{
   float: left;
-  width: 13.5vh;
+  width: 8.5vh;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -107,13 +110,87 @@
 }
 
 
-
-/* ----------------products------------------- */
-
 .invalid-inp{
   color: red;
   margin-left: 2vh;
 }
+
+/* ----------------leaderList------------------- */
+
+.container {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20vh;
+  padding-top: 5vh;
+}
+
+.heading-leader{
+  padding-top: 15vh;
+  text-align: center;
+  text-decoration: underline;
+}
+
+
+.card {
+  background-color: #fff;
+  border-radius: 2vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: calc(25% - 20px); /* three cards per row */
+  overflow: hidden;
+  width: 60vh;
+  margin: 4vh; 
+  z-index: 0;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 3vh;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 2vh;
+  color: black;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 2vh;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 1.5vh 1.5vh;
+  margin: 1vh;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5vh;
+  transition: background-color 0.3s ease;
+  width: 150px;
+}
+
+.card-button:hover {
+  background-color: rgb(54, 54, 54);
+}
+
+
+
 
 
 
