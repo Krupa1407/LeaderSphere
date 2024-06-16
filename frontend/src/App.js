@@ -8,6 +8,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 import PrivateComponent from './components/PrivateComponent';
+import Login from './components/Login';
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
             <Route exact path="/profile" element={<h1>profile</h1>} />
         </Route>
           <Route exact path="/signup" element={<SignUp/>} />
-
+          <Route exact path="/login" element={<Login/>} />
+          
         </Routes>
         <Footer/>
       </Router>

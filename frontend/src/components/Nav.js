@@ -16,11 +16,13 @@ const Nav = () => {
         <li><Link to="/add">Add Leader</Link></li>
         <li><Link to="/update">Update Leader</Link></li>
         <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/login">Login</Link></li>
         {auth ? 
         <li><Link onClick={logout} to="/signup">Logout</Link></li> 
         :
+        <>
         <li><Link to="/signup">signup</Link></li>
+        <li><Link to="/login">login</Link></li>
+        </>
         }
       </ul>
     </div>
