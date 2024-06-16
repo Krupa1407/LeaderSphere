@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   max-height: 100vh;
+  max-width: 100%;
 }
 
 .nav-ul{
@@ -17,6 +18,7 @@
 }
 
 .nav-ul li a{
+  font-size: large;
   text-decoration: none;
   color: white;
 }
@@ -31,6 +33,7 @@
   width: 100%;
   padding: 2vh;
   text-align: center;
+  font-size: large;
 
 
 
@@ -47,6 +50,42 @@
 .footer-element{
   margin-bottom: 10px;
 }
+
+
+
+
+
+/* ----------------signup------------------- */
+.inputBox{
+  font-size: large;
+  display: block;
+  margin: 2vh;
+  padding: 2vh;
+  width: 30vw;
+  border: 2px solid black;
+}
+
+.register{
+  margin-left: 30%;
+}
+
+.regbtn{
+  font-size: x-large;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (prefers-reduced-motion: no-preference) {
