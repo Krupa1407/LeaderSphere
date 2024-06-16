@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 // import logo from '../images/logo.jpg';
 // import logo2 from '../images/dp6.jpg';
 
@@ -24,7 +25,7 @@ const LeaderList = () => {
             <div className= "container">
                 {
                     leaders.map((item, index) => 
-                        <div className= "card">
+                        <div className= "card" key={item._id}>
                         {/* <img src={logo} alt="Card Image" className= "card-img"/> */}
                         <div className= "card-body">
                         <h5 className= "card-title">{item.name}</h5>
@@ -43,8 +44,8 @@ const LeaderList = () => {
                                 <li style={{ listStyle: 'none' }} key={index}>{award}</li>
                             ))}
                         </ul>
-                        <a href="#" className= "card-button">Edit</a>
-                        <a href="#" className= "card-button">Delete</a>
+                        <Link href="#" className= "card-button">Edit</Link>
+                        <Link href="#" className= "card-button">Delete</Link>
                         </div>
                     </div>
                     )
