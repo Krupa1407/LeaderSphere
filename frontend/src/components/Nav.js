@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'       //because anker tag refresh the page
+import logo from '../images/logo.jpg';
 
 const Nav = () => {
   const auth = localStorage.getItem("user");
@@ -9,21 +10,27 @@ const Nav = () => {
     navigate("/signup");
   }
 
+
+  
   return (
     <div>
       <ul className='nav-ul'>
+      <img src={logo} alt="logo" className='logo' />
+      <li className='logo'><Link to="/">LeadLore</Link></li>
+      {auth ? 
+        <>
         <li><Link to="/">Leaders</Link></li>
         <li><Link to="/add">Add Leader</Link></li>
         <li><Link to="/update">Update Leader</Link></li>
         <li><Link to="/profile">Profile</Link></li>
-        {auth ? 
-        <li><Link onClick={logout} to="/signup">Logout</Link></li> 
+        <li><Link onClick={logout} to="/signup">Logout [{JSON.parse(auth).name}]</Link></li> 
+        </>
         :
-        <>
+        <div className='nav-right'>
         <li><Link to="/signup">signup</Link></li>
         <li><Link to="/login">login</Link></li>
-        </>
-        }
+        </div>
+      }
       </ul>
     </div>
   )

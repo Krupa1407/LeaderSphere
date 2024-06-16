@@ -1,6 +1,7 @@
 import express from 'express';
 import './db/config.js';
 import User from './db/User.js';
+import Leader from './db/Leader.js';
 import cors from 'cors';
 const app = express();
 app.use(cors());
@@ -33,6 +34,14 @@ app.post("/login", async(req, res) => {
             res.send(user);
     }
 });
+
+// leaders
+app.post("/add-leader", async(req, res) => {
+    let leader = new Leader(req.body);
+    let result = await leader.save();
+    res.send(result);
+})
+
 
 
 

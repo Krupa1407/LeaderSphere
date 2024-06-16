@@ -6,6 +6,9 @@
   max-width: 100%;
 }
 
+/* ----------------Navbar------------------- */
+
+
 .nav-ul{
   background-color: black;
   padding: 5px;
@@ -23,13 +26,24 @@
   color: white;
 }
 
+.nav-right{
+  text-align: right;
+}
 
+/* ----------------logo------------------- */
+.logo{
+  float: left;
+  width: 7.5vh;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
 
 /* ----------------footer------------------- */
 .footer-div{
   position: absolute;
   bottom: 0;
+  position: fixed;
   width: 100%;
   padding: 2vh;
   text-align: center;
