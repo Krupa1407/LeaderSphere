@@ -54,6 +54,14 @@ app.get("/leaders", async(req, res) => {
 })
 
 
+// delete leaders
+app.delete('/delete-leader/:id', async(req, res) => {
+    // res.send(req.params.id);
+    let leader = await Leader.deleteOne({_id: req.params.id});
+    res.send(req.params.id);
+})
+
+
 
 
 // // connection to database
