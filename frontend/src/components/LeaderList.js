@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 // import logo from '../images/logo.jpg';
 // import logo2 from '../images/dp6.jpg';
 
@@ -58,7 +59,7 @@ const LeaderList = () => {
                             ))}
                         </ul>
                         <button className= "card-button" onClick={() => deleteLeader(item._id)}>Delete</button>
-                        {/* <Link href="#" className= "card-button">Edit</Link> */}
+                        <Link className= "card-button" to={`/update/${item._id}`}>update</Link>
                         </div>
                     </div>
                     )

@@ -45,11 +45,11 @@
 
 /* ----------------footer------------------- */
 .footer-div{
-  /* position: absolute; */
+  position: absolute;
   bottom: 0;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
-  padding: 2vh;
+  padding: 1vh;
   text-align: center;
   font-size: large;
 
@@ -66,7 +66,7 @@
 }
 
 .footer-element{
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 
