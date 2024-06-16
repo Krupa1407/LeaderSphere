@@ -1,8 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'       //because anker tag refresh the page
+import { Link, useNavigate } from 'react-router-dom'       //because anker tag refresh the page
 
 const Nav = () => {
   const auth = localStorage.getItem("user");
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.clear();
+    navigate("/signup");
+  }
 
   return (
     <div>
@@ -13,9 +18,10 @@ const Nav = () => {
         <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/login">Login</Link></li>
         {auth ? 
-        <li><Link to="/logout">Logout</Link></li> 
+        <li><Link onClick={logout} to="/signup">Logout</Link></li> 
         :
-        <li><Link to="/signup">signup</Link></li>}
+        <li><Link to="/signup">signup</Link></li>
+        }
       </ul>
     </div>
   )
