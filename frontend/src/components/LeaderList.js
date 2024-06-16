@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
 // import logo from '../images/logo.jpg';
 // import logo2 from '../images/dp6.jpg';
 
@@ -16,8 +15,22 @@ const LeaderList = () => {
     const getLeaders = async() => {
         let result = await fetch('http://localhost:5000/leaders');
         result = await result.json();
+        // console.log('Products fetched:', result);
         setLeaders(result);
     }
+    const deleteLeader = async(id) => {
+        // console.log(id);
+        let result = await fetch(`http://localhost:5000/delete-leader/${id}`,{
+            method: "Delete"
+        });
+        result = await result.text();
+        console.log("deleted leader id: ", result);
+        if(result){
+            getLeaders();
+            // alert("record is deleted successfully.");
+        }
+    };
+
 
   return (
     <div>
@@ -44,8 +57,8 @@ const LeaderList = () => {
                                 <li style={{ listStyle: 'none' }} key={index}>{award}</li>
                             ))}
                         </ul>
-                        <Link href="#" className= "card-button">Edit</Link>
-                        <Link href="#" className= "card-button">Delete</Link>
+                        <button className= "card-button" onClick={() => deleteLeader(item._id)}>Delete</button>
+                        {/* <Link href="#" className= "card-button">Edit</Link> */}
                         </div>
                     </div>
                     )
