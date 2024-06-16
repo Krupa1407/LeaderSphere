@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import {useNavigate} from 'react-router-dom';   //use for the navigation
 
 
@@ -8,6 +8,14 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+
+
+    useEffect(() => {
+      const auth = localStorage.getItem("user");
+      if(auth){
+        navigate('/');
+      }
+    })
 
 
 
@@ -22,9 +30,8 @@ const SignUp = () => {
         });
         result = await result.json();
         console.log(result);
-        if(result){
-          navigate('/');
-        }
+        localStorage.setItem("user", JSON.stringify(result));
+        navigate('/');
     }
 
 
