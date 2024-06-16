@@ -42,7 +42,16 @@ app.post("/add-leader", async(req, res) => {
     res.send(result);
 })
 
-
+// display products
+app.get("/leaders", async(req, res) => {
+    let leaders = await Leader.find();
+    if(leaders.length > 0){
+        res.send(leaders);
+    }
+    else{
+        res.send({result: "No Leaders Found."});
+    }
+})
 
 
 

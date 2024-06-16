@@ -11,6 +11,7 @@ const Addleader = () => {
     const [awardInput, setAwardInput] = useState('');
     const [books, setBooks] = useState([]);
     const [awards, setAwards] = useState([]);
+    const [error, setError] = useState(false);
 
     const addBook = () => {
         if (bookInput.trim() !== '') {
@@ -28,6 +29,12 @@ const Addleader = () => {
 
 
     const addLeader = async (req, res) => {
+        
+        if(!name || !category || !desc || !age){
+            setError(true);
+            return false;
+        }
+
         console.log(name, category, desc, age, books, awards);
         // fetch the userid
         const user = JSON.parse(localStorage.getItem("user"));
@@ -53,9 +60,13 @@ const Addleader = () => {
     <div className='register container-add-leader'>
     <h1>Add Leader</h1>
     <input className="inputBox" type="text" placeholder='enter name' value={name}  onChange={(e) => setName(e.target.value)}/>
+    {error && !name && <span className='invalid-inp'>enter valid name</span>}
     <input className="inputBox"  type="text" placeholder='enter category' value={category} onChange={(e) => setCategory(e.target.value)}/>
+    {error && !category && <span className='invalid-inp'>enter valid category</span>}
     <input className="inputBox"  type="text" placeholder='enter desc' value={desc} onChange={(e) => setDesc(e.target.value)}/>
+    {error && !desc && <span className='invalid-inp'>enter valid desc</span>}
     <input className="inputBox"  type="text" placeholder='enter age' value={age} onChange={(e) => setAge(e.target.value)}/>
+    {error && !age && <span className='invalid-inp'>enter valid age</span>}
     
     <div>
         <input className="inputBox" type="text" placeholder='enter book' value={bookInput} onChange={(e) => setBookInput(e.target.value)} />
