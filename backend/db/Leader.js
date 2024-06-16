@@ -10,7 +10,7 @@ const leaderSchema = new mongoose.Schema({
     awards: Array,
     userId: String,
 });
-const leadermodel = mongoose.model("leadres", leaderSchema);
+const leadermodel = mongoose.model("leaders", leaderSchema);
 
 
 export default leadermodel;

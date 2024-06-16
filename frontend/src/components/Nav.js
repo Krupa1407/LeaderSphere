@@ -18,13 +18,13 @@ const Nav = () => {
       <img src={logo} alt="logo" className='logo' />
       <li className='logo'><Link to="/">LeadLore</Link></li>
       {auth ? 
-        <>
+        <div className='nav-right'>
         <li><Link to="/">Leaders</Link></li>
         <li><Link to="/add">Add Leader</Link></li>
         <li><Link to="/update">Update Leader</Link></li>
         <li><Link to="/profile">Profile</Link></li>
         <li><Link onClick={logout} to="/signup">Logout [{JSON.parse(auth).name}]</Link></li> 
-        </>
+        </div>
         :
         <div className='nav-right'>
         <li><Link to="/signup">signup</Link></li>

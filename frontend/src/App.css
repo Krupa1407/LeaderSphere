@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-height: 100vh;
+  max-height: 100%;
   max-width: 100%;
 }
 
@@ -33,7 +33,7 @@
 /* ----------------logo------------------- */
 .logo{
   float: left;
-  width: 7.5vh;
+  width: 13.5vh;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -91,10 +91,20 @@
 }
 
 
+/* ----------------add-leader------------------- */
 
+.container-add-leader{
+  padding-bottom: 20vh;
+}
 
-
-
+.addbtn{
+  font-size: large;
+  display: block;
+  margin: 2vh;
+  padding: 1vh;
+  width: 10vw;
+  border: 2px solid black;
+}
 
 
 
