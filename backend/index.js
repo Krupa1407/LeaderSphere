@@ -61,7 +61,16 @@ app.delete('/delete-leader/:id', async(req, res) => {
     res.send(req.params.id);
 })
 
-
+// for update the product
+app.get('/leader/:id', async(req, res) => {
+    let result = await Leader.findOne({_id: req.params.id});
+    if(result){
+        res.send(result);
+    }
+    else{
+        res.send({result: "No record found."})
+    }
+});
 
 
 // // connection to database

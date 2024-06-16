@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/" element={<PrivateComponent/>} >
             <Route exact path="/" element={<LeaderList/>} />
             <Route exact path="/add" element={<Addleader/>} />
-            <Route exact path="/update" element={<Updateleader/>} />
+            <Route exact path="/update/:id" element={<Updateleader/>} />
             <Route exact path="/logout" element={<h1>logout</h1>} />
             <Route exact path="/profile" element={<h1>profile</h1>} />
         </Route>

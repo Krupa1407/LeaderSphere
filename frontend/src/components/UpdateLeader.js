@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom';  
 
 
 const Updateleader = () => {
@@ -7,11 +8,25 @@ const Updateleader = () => {
     const [category, setCategory] = useState('');
     const [desc, setDesc] = useState('');
     const [age, setAge] = useState('');
-    const [books, setBooks] = useState('');
-    const [awards, setAwards] = useState('');
+    const [books, setBooks] = useState([]);
+    const [awards, setAwards] = useState([]);
+    const params = useParams();
 
+    useEffect(() => {
+      getLeaderDetails();
+    },[]);
+    // here in the above line [] due to this warning is coming.
 
-
+    const getLeaderDetails = async() => {
+      console.log(params);
+      let result = await fetch(`http://localhost:5000/leader/${params.id}`);
+      result = await result.json();
+      // console.log(result);
+      setName(result.name);
+      setCategory(result.category);
+      setDesc(result.desc);
+      setAge(result.age);
+    }
 
     const updateLeader = async (req, res) => {
         console.log(name, category, desc, age, books, awards);
