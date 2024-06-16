@@ -73,6 +73,18 @@ app.get('/leader/:id', async(req, res) => {
 });
 
 
+app.put('/leader/:id', async(req, res) => {
+    let result = await Leader.updateOne(
+        {_id: req.params.id},
+        {
+            $set: req.body
+        }
+    )
+    res.send(result);
+});
+
+
+
 // // connection to database
 // const connectDB = async() => {
 //     mongoose.connect('mongodb://127.0.0.1:27017/LeaderSphere');

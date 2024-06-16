@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom';  
+import { useParams, useNavigate } from 'react-router-dom';  
 
 
 const Updateleader = () => {
@@ -11,6 +11,7 @@ const Updateleader = () => {
     const [books, setBooks] = useState([]);
     const [awards, setAwards] = useState([]);
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
       getLeaderDetails();
@@ -30,6 +31,16 @@ const Updateleader = () => {
 
     const updateLeader = async (req, res) => {
         console.log(name, category, desc, age, books, awards);
+        let result = await fetch(`http://localhost:5000/leader/${params.id}`,{
+          method: "Put",
+          body: JSON.stringify({name, category, desc, age}),
+          headers: {
+            "Content-Type" : "application/json"
+          }
+        });
+        result = await result.json();
+        navigate("/");
+        console.log(result);
     }
 
   return (
