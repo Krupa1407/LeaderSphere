@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Nav/>
         <Routes>
-          <Route exact path="/" element={<h1>product</h1>} />
+          <Route exact path="/" element={<h1>leader</h1>} />
           <Route exact path="/add" element={<h1>add</h1>} />
           <Route exact path="/update" element={<h1>update</h1>} />
           <Route exact path="/logout" element={<h1>logout</h1>} />
