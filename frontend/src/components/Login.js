@@ -39,7 +39,10 @@ const Login = () => {
 
   return (
     <div className='register'>
-      <h1>Login</h1>
+      <video className="video-background" autoPlay loop muted>
+        <source src="/background.mp4" type="video/mp4" />
+      </video>
+      <h1 style={{marginLeft: '18%'}}>Login</h1>
       <input className="inputBox"  type="text" placeholder='enter email' value={email} onChange={(e) => setEmail(e.target.value)}/>
       <input className="inputBox"  type="password" placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       <button onClick={handleLogin} className="inputBox regbtn" type="button">Login</button>

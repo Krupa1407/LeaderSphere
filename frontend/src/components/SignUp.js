@@ -37,7 +37,10 @@ const SignUp = () => {
 
   return (
     <div className='register'>
-      <h1>register</h1>
+      <video className="video-background" autoPlay loop muted>
+        <source src="/background.mp4" type="video/mp4" />
+      </video>
+      <h1 style={{marginLeft: '18%'}}>register</h1>
       <input className="inputBox" type="text" placeholder='enter name' value={name}  onChange={(e) => setName(e.target.value)}/>
       <input className="inputBox"  type="text" placeholder='enter email' value={email} onChange={(e) => setEmail(e.target.value)}/>
       <input className="inputBox"  type="password" placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)}/>

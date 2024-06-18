@@ -16,7 +16,7 @@ const Nav = () => {
     <div>
       <ul className='nav-ul'>
       <img src={logo} alt="logo" className='logo' />
-      <li className='logo'><Link to="/">LeadLore</Link></li>
+      <li className='logo'><Link to="/">LeaderSphere</Link></li>
       {auth ? 
         <div className='nav-right'>
         <li><Link to="/">Leaders</Link></li>
