@@ -12,6 +12,8 @@ import Login from './components/Login';
 import Addleader from './components/Addleader';
 import LeaderList from './components/LeaderList';
 import Updateleader from './components/UpdateLeader';
+import AllLeaders from './components/AllLeaders';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -26,10 +28,11 @@ function App() {
             <Route exact path="/add" element={<Addleader/>} />
             <Route exact path="/update/:id" element={<Updateleader/>} />
             <Route exact path="/logout" element={<h1>logout</h1>} />
-            <Route exact path="/profile" element={<h1>profile</h1>} />
+            <Route exact path="/profile" element={<Profile/>} />
         </Route>
           <Route exact path="/signup" element={<SignUp/>} />
           <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/allleaders" element={<AllLeaders/>} />
           
         </Routes>
         <Footer/>

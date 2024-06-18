@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';  
+
 
 
 const Addleader = () => {
@@ -13,6 +15,8 @@ const Addleader = () => {
     const [awards, setAwards] = useState([]);
     const [error, setError] = useState(false);
     const [error2, setError2] = useState('');
+    const navigate = useNavigate();
+
 
     const addBook = () => {
         if (bookInput.trim() !== '' && books.length < 3) {
@@ -58,6 +62,7 @@ const Addleader = () => {
             }
         });
         result = await result.json();
+        navigate("/");
         console.log(result);
 
 

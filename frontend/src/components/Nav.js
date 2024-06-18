@@ -21,7 +21,7 @@ const Nav = () => {
         <div className='nav-right'>
         <li><Link to="/">Leaders</Link></li>
         <li><Link to="/add">Add Leader</Link></li>
-        <li><Link to="/update">Update Leader</Link></li>
+        {/* <li><Link to="/update">Update Leader</Link></li> */}
         <li><Link to="/profile">Profile</Link></li>
         <li><Link onClick={logout} to="/signup">Logout [{JSON.parse(auth).name}]</Link></li> 
         </div>
@@ -29,6 +29,7 @@ const Nav = () => {
         <div className='nav-right'>
         <li><Link to="/signup">signup</Link></li>
         <li><Link to="/login">login</Link></li>
+        <li><Link to="/allleaders">Leaders</Link></li>
         </div>
       }
       </ul>
