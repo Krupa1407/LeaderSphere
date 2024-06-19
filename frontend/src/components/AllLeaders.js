@@ -12,9 +12,13 @@ const AllLeaders = () => {
     },[]);
 
     const getLeaders = async() => {
-        let result = await fetch('http://localhost:5000/leaders');
+        let result = await fetch('http://localhost:5000/allleaders');
         result = await result.json();
-        setLeaders(result);
+        if(Array.isArray(result)) {
+            setLeaders(result);
+        } else {
+            setLeaders([]); 
+        }
     }
 
 

@@ -44,7 +44,8 @@ app.post("/add-leader", async(req, res) => {
 
 // display leaders
 app.get("/leaders", async(req, res) => {
-    let leaders = await Leader.find();
+    const userId = req.query.userId; 
+    let leaders = await Leader.find({ userId: userId }); 
     if(leaders.length > 0){
         res.send(leaders);
     }

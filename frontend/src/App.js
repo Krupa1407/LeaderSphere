@@ -30,8 +30,8 @@ function App() {
             <Route exact path="/logout" element={<h1>logout</h1>} />
             <Route exact path="/profile" element={<Profile/>} />
         </Route>
-          <Route exact path="/signup" element={<SignUp/>} />
           <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/signup" element={<SignUp/>} />
           <Route exact path="/allleaders" element={<AllLeaders/>} />
           
         </Routes>

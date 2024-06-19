@@ -13,12 +13,25 @@ const LeaderList = () => {
         getLeaders();
     },[]);
 
+    // const getLeaders = async() => {
+    //     let result = await fetch('http://localhost:5000/leaders');
+    //     result = await result.json();
+    //     // console.log('Products fetched:', result);
+    //     setLeaders(result);
+    // }
     const getLeaders = async() => {
-        let result = await fetch('http://localhost:5000/leaders');
+        const user = JSON.parse(localStorage.getItem('user'));
+        const userId = user._id;
+        let result = await fetch(`http://localhost:5000/leaders?userId=${userId}`);
         result = await result.json();
-        // console.log('Products fetched:', result);
-        setLeaders(result);
+        if(Array.isArray(result)) {
+            setLeaders(result);
+        } else {
+            setLeaders([]); 
+        }
     }
+
+
     const deleteLeader = async(id) => {
         // console.log(id);
         let result = await fetch(`http://localhost:5000/delete-leader/${id}`,{
@@ -64,7 +77,7 @@ const LeaderList = () => {
                     </div>
                     )
                 }
-        </div>
+            </div>
     </div>
   )
 }
